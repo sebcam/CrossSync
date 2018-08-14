@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CoreSync.Infrastructure.Client</AssemblyName>
+    <RootNamespace>CoreSync.Infrastructure.Client</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Sébastien Cambon</Authors>
+    <Description>This provides a client side implementation of EntityFramework using versionned entities and tracking changes</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreSync.Entity.Abstractions.EF\CoreSync.Entity.Abstractions.EF.csproj" />
+    <ProjectReference Include="..\CoreSync.Entity.Client\CoreSync.Entity.Client.csproj" />
+  </ItemGroup>
+
+</Project>
