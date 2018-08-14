@@ -15,7 +15,11 @@
       IoC registration
     </Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
     <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

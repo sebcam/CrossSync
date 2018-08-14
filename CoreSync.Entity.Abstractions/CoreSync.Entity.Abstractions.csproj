@@ -11,7 +11,11 @@ Data access service interface and an Entity base class
 Unit of work interface
 ...</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
     <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>coresync.pfx</AssemblyOriginatorKeyFile>
     <PackageIconUrl></PackageIconUrl>

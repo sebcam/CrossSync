@@ -8,7 +8,11 @@
     <Authors>Sébastien Cambon</Authors>
     <Description>This provides a client side tools for Dependency Injection</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
     <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

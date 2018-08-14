@@ -7,7 +7,11 @@
     <Authors>Sébastien Cambon</Authors>
     <Description>This provides a server side implementation of EntityFramework using versionned entities and tracking changes</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
     <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
