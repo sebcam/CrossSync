@@ -12,7 +12,7 @@ namespace CoreSync.Xamarin.Exceptions
     /// </summary>
     /// <param name="serverUrl"></param>
     public ServerNotReachableException(string serverUrl)
-      : base($"Le serveur n'est pas disponible : {serverUrl}.")
+      : base($"Server not available : {serverUrl}.")
     {
     }
   }

@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CoreSync.Xamarin.Dependency</AssemblyName>
+    <RootNamespace>CoreSync.Xamarin.Dependency</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Sébastien Cambon</Authors>
+    <Description>This provides a client side tools for Dependency Injection</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+  </ItemGroup>
+
+</Project>

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Acr.UserDialogs;
 using CoreSync.Entity;
 using CoreSync.Entity.Abstractions;
 using CoreSync.Entity.Abstractions.EF.UnitOfWork;
 using CoreSync.Entity.Abstractions.UnitOfWork;
 using CoreSync.Infrastructure.Client;
-using CoreSync.Xamarin.Dependency;
+using CoreSync.Xamarin.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoreSync.Xamarin.Services
@@ -21,6 +20,7 @@ namespace CoreSync.Xamarin.Services
   public abstract class SyncService<T> : IMobileSyncService<T>, ISyncService where T : class, IVersionableEntity, new()
   {
     private readonly IUnitOfWork uof;
+    private readonly Lazy<IErrorService> errorService;
     protected readonly IClientContext context;
     private readonly SyncContext<T> syncContext;
 
@@ -28,13 +28,14 @@ namespace CoreSync.Xamarin.Services
     /// ctor
     /// </summary>
     /// <param name="uof"></param>
-    public SyncService(IUnitOfWork<IClientContext> uof)
+    public SyncService(IUnitOfWork<IClientContext> uof, Lazy<IErrorService> errorService)
     {
       this.uof = uof;
+      this.errorService = errorService;
       this.context = uof.Context;
       Set = context.Set<T>();
 
-      syncContext = new SyncContext<T>(context, this);
+      syncContext = new SyncContext<T>(context, this, errorService);
     }
 
     /// <summary>
@@ -133,7 +134,7 @@ namespace CoreSync.Xamarin.Services
         }
         else
         {
-          using (IoC.Resolve<IUserDialogs>().Toast("L'enregistrement n'a pas été enregistré car il n'était pas a jour.")) { }
+          errorService.Value.ShowError("L'enregistrement n'a pas été enregistré car il n'était pas a jour.");
           //throw new SyncConflictVersionException<T>(value, existing);
         }
         return existing;

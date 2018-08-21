@@ -24,15 +24,16 @@
 
   <ItemGroup>
     <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
-    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Autofac" Version="4.8.1" />
     <PackageReference Include="Microsoft.Bcl.Build" Version="1.0.21" />
-    <PackageReference Include="PropertyChanged.Fody" Version="2.2.9" />
-    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.1.1" />
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.296286-pre2" />
+    <PackageReference Include="PropertyChanged.Fody" Version="2.5.9" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoreSync.Xamarin.Dependency\CoreSync.Xamarin.Dependency.csproj" />
+    <ProjectReference Include="..\CoreSync.Xamarin.DependencyInjection\CoreSync.Xamarin.DependencyInjection.csproj" />
+    <ProjectReference Include="..\CoreSync.Xamarin\CoreSync.Xamarin.csproj" />
   </ItemGroup>
 
 </Project>

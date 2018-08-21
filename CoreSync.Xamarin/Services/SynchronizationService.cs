@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using CoreSync.Infrastructure.Client;
 using Autofac;
-using System.Linq;
-using CoreSync.Entity.Abstractions;
-using Newtonsoft.Json;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
 using CoreSync.Entity;
-using Plugin.Connectivity.Abstractions;
-using Acr.UserDialogs;
-using CoreSync.Xamarin.Dependency;
-using System.Diagnostics;
-using Xamarin.Forms;
+using CoreSync.Entity.Abstractions;
 using CoreSync.Entity.Abstractions.Entities;
+using CoreSync.Infrastructure.Client;
+using CoreSync.Xamarin.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace CoreSync.Xamarin.Services
 {
@@ -24,14 +22,16 @@ namespace CoreSync.Xamarin.Services
   {
     private readonly IClientContext context;
     private readonly IMobileSyncService<T> service;
+    private readonly Lazy<IErrorService> errorService;
     private DateTimeOffset lastSync;
     private readonly string baseUrl;
     private readonly string deletedRelativeUri;
 
-    public SyncContext(IClientContext context, IMobileSyncService<T> service)
+    public SyncContext(IClientContext context, IMobileSyncService<T> service, Lazy<IErrorService> errorService)
     {
       this.context = context;
       this.service = service;
+      this.errorService = errorService;
       lastSync = DateTimeOffset.MinValue;
       baseUrl = IoC.ResolveNamed<string>("ApiBaseUrl");
       deletedRelativeUri = IoC.ResolveNamed<string>("DeletedRelativeUri");
@@ -41,7 +41,7 @@ namespace CoreSync.Xamarin.Services
     {
       Debug.WriteLine($"Synchro de : {typeof(T).Name}");
 
-      var connectivity = IoC.Resolve<IConnectivity>();
+      var connectivity = IoC.Resolve<IConnectivityService>();
 
       if (!Debugger.IsAttached && !connectivity.IsConnected)
       {
@@ -49,16 +49,13 @@ namespace CoreSync.Xamarin.Services
       }
       if (!Debugger.IsAttached && !await connectivity.IsRemoteReachable(baseUrl))
       {
-        IoC.Resolve<IUserDialogs>().Toast(new ToastConfig($"Le serveur est indisponible ({baseUrl})")
-        {
-          Position = ToastPosition.Top
-        });
+        errorService.Value.ShowError($"Server not available ({baseUrl})");
         return;
       }
 
       if (Application.Current.Properties.TryGetValue($"{typeof(T).Name}.LastSynchroDate", out object date))
       {
-        Debug.WriteLine($"Derniere synchro faite le : {date}");
+        Debug.WriteLine($"Last sync done : {date}");
         lastSync = DateTimeOffset.Parse(date.ToString());
       }
       else
@@ -110,8 +107,8 @@ namespace CoreSync.Xamarin.Services
       }
       catch (Exception ex)
       {
-        Debug.WriteLine($"Exception en syppression : {ex.Message}");
-        Debug.WriteLine($"Exception en syppression inner : {ex.InnerException}");
+        Debug.WriteLine($"Exception en suppression : {ex.Message}");
+        Debug.WriteLine($"Exception en suppression inner : {ex.InnerException}");
         Debug.WriteLine($"{ex.StackTrace}");
       }
     }
@@ -267,6 +264,10 @@ namespace CoreSync.Xamarin.Services
 
           await context.CommitAsync(true);
         }
+      }
+      catch (HttpRequestException ex)
+      {
+        Debug.WriteLine(ex);
       }
       catch (Exception ex)
       {

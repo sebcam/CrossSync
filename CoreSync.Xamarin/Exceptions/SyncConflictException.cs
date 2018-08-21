@@ -13,7 +13,7 @@ namespace CoreSync.Xamarin.Exceptions
     /// </summary>
     /// <param name="clientValue"></param>
     /// <param name="serverValue"></param>
-    public SyncConflictVersionException(JObject clientValue, JObject serverValue) : base("Conflit de version détecté.")
+    public SyncConflictVersionException(JObject clientValue, JObject serverValue) : base("Version Conflict occured.")
     {
       ClientValue = clientValue;
       ServerValue = serverValue;

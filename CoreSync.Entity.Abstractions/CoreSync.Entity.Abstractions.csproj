@@ -16,7 +16,7 @@ Unit of work interface
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageOutputPath>..\nuget</PackageOutputPath>
     <PackageProjectUrl>https://github.com/sebastiencambon/CoreSync</PackageProjectUrl>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>coresync.pfx</AssemblyOriginatorKeyFile>
     <PackageIconUrl></PackageIconUrl>
   </PropertyGroup>

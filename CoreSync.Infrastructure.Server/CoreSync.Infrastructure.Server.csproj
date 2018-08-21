@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>CoreSync.Infrastructure.Server</AssemblyName>
     <RootNamespace>CoreSync.Infrastructure.Server</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="4.1.0" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
   </ItemGroup>
 
   <ItemGroup>

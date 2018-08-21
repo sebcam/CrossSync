@@ -5,7 +5,7 @@ using Xamarin.Forms;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 using CoreSync.Xamarin.Mvvm.Models;
-using CoreSync.Xamarin.Dependency;
+using CoreSync.Xamarin.DependencyInjection;
 using System.Threading;
 
 namespace CoreSync.Xamarin.Mvvm.Services.Navigation

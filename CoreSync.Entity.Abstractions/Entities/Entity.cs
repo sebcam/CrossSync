@@ -9,7 +9,7 @@ namespace CoreSync.Entity.Abstractions.Abstractions
   {
     int? _requestedHashCode;
     Guid _Id;
-    Guid newId;
+    readonly Guid newId;
 
     /// <summary>
     /// Constructor

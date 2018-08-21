@@ -49,7 +49,7 @@ namespace CoreSync.Entity.Server.Repositories
     /// </summary>
     /// <param name="entity"></param>
     /// <returns></returns>
-    public Task DeleteAsync(T entity)
+    public virtual Task DeleteAsync(T entity)
     {
       Set.Remove(entity);
       return Task.FromResult(0);
@@ -73,7 +73,7 @@ namespace CoreSync.Entity.Server.Repositories
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    public async Task<T> GetAsync(Guid id)
+    public virtual async Task<T> GetAsync(Guid id)
     {
       return await Set.FirstOrDefaultAsync(f => f.Id == id);
     }
