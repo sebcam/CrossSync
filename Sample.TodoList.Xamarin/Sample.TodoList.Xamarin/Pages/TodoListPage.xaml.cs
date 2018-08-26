@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CoreSync.Xamarin.Mvvm.Pages
+namespace CrossSync.Xamarin.Mvvm.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TodoListPage : ContentPage

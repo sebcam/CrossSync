@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Repositories\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -23,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoreSync.AspNetCore\CoreSync.AspNetCore.csproj" />
-    <ProjectReference Include="..\CoreSync.Infrastructure.Server\CoreSync.Infrastructure.Server.csproj" />
+    <ProjectReference Include="..\CrossSync.AspNetCore\CrossSync.AspNetCore.csproj" />
+    <ProjectReference Include="..\CrossSync.Infrastructure.Server\CrossSync.Infrastructure.Server.csproj" />
   </ItemGroup>
 
   <Import Project="..\Sample.TodoList.Entities.Shared\Sample.TodoList.Entities.Shared.projitems" Label="Shared" />

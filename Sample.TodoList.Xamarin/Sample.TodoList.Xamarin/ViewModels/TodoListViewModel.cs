@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using CoreSync.Xamarin.Mvvm.Extensions;
-using CoreSync.Xamarin.Mvvm.Models;
-using CoreSync.Xamarin.Services;
+using CrossSync.Xamarin.Mvvm.Extensions;
+using CrossSync.Xamarin.Mvvm.Models;
+using CrossSync.Xamarin.Services;
 using Xamarin.Forms;
 
 namespace Sample.TodoList.Xamarin.ViewModels

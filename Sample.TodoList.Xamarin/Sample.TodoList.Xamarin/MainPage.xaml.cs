@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CoreSync.Xamarin.Mvvm.Services.Navigation;
-using CoreSync.Xamarin.Services;
+using CrossSync.Xamarin.Mvvm.Services.Navigation;
+using CrossSync.Xamarin.Services;
 using Sample.TodoList.Xamarin.ViewModels;
 using Xamarin.Forms;
 

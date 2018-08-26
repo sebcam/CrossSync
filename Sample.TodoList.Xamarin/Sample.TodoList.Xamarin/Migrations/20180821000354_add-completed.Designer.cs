@@ -10,7 +10,7 @@ namespace Sample.TodoList.Xamarin.Migrations
 {
     [DbContext(typeof(TodoListContext))]
     [Migration("20180821000354_add-completed")]
-    partial class addcompleted
+    partial class Addcompleted
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace Sample.TodoList.Xamarin.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846");
 
-            modelBuilder.Entity("CoreSync.Infrastructure.Client.Operation", b =>
+            modelBuilder.Entity("CrossSync.Infrastructure.Client.Operation", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();

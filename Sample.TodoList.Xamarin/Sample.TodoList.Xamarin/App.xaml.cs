@@ -1,10 +1,11 @@
 using System;
 using System.Reflection;
 using Autofac;
-using CoreSync.Entity.Abstractions.EF.UnitOfWork;
-using CoreSync.Infrastructure.Client.UnitOfWork;
-using CoreSync.Xamarin.DependencyInjection;
-using CoreSync.Xamarin.Mvvm;
+using CrossSync.Entity.Abstractions.EF.UnitOfWork;
+using CrossSync.Infrastructure.Client.UnitOfWork;
+using CrossSync.Xamarin.DependencyInjection;
+using CrossSync.Xamarin.Mvvm;
+using CrossSync.Xamarin.Services;
 using Sample.TodoList.Entities.Shared;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ using Xamarin.Forms.Xaml;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Sample.TodoList.Xamarin
 {
-  public partial class App : CoreSyncApplication
+  public partial class App : CrossSyncApplication
   {
     private static string dbPath;
 
@@ -20,10 +21,6 @@ namespace Sample.TodoList.Xamarin
     {
       App.dbPath = dbPath;
     }
-
-    protected override string ApiBaseUrl => Constants.ApiBaseUrl;
-
-    protected override string DeletedRelativeUri => Constants.DeleteApiUri;
 
     public App()
     {
@@ -40,6 +37,8 @@ namespace Sample.TodoList.Xamarin
     public override void ConfigureIoC(ContainerBuilder builder)
     {
       base.ConfigureIoC(builder);
+
+      builder.Register<SyncConfiguration>(c => new SyncConfiguration { ApiBaseUrl = Constants.ApiBaseUrl, TombstoneUri = Constants.DeleteApiUri });
 
       builder.RegisterType<UnitOfWork<TodoListContext>>()
        .AsImplementedInterfaces()

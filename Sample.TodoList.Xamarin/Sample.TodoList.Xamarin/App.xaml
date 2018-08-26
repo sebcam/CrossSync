@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<core:CoreSyncApplication xmlns="http://xamarin.com/schemas/2014/forms"
+<core:CrossSyncApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                     xmlns:core="clr-namespace:CoreSync.Xamarin.Mvvm;assembly=CoreSync.Xamarin.Mvvm"
+                     xmlns:core="clr-namespace:CrossSync.Xamarin.Mvvm;assembly=CrossSync.Xamarin.Mvvm"
              x:Class="Sample.TodoList.Xamarin.App">
   <Application.Resources>
 
   </Application.Resources>
-</core:CoreSyncApplication>
+</core:CrossSyncApplication>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CoreSync.Entity;
+using CrossSync.Entity;
 
 namespace Sample.TodoList.Entities.Shared
 {
@@ -18,7 +18,7 @@ namespace Sample.TodoList.Entities.Shared
 
     public DateTime Date { get; set; }
 
-    public IReadOnlyCollection<TodoListItem> Items => items ?? (items = new List<TodoListItem>());
+    public virtual IReadOnlyCollection<TodoListItem> Items => items ?? (items = new List<TodoListItem>());
 
     public bool Completed { get; set; }
   }

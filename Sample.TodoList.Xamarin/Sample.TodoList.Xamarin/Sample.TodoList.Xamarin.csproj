@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CoreSync.Xamarin.DependencyInjection\CoreSync.Xamarin.DependencyInjection.csproj" />
-    <ProjectReference Include="..\..\CoreSync.Xamarin.Mvvm\CoreSync.Xamarin.Mvvm.csproj" />
-    <ProjectReference Include="..\..\CoreSync.Xamarin\CoreSync.Xamarin.csproj" />
+    <ProjectReference Include="..\..\CrossSync.Xamarin.DependencyInjection\CrossSync.Xamarin.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\CrossSync.Xamarin.Mvvm\CrossSync.Xamarin.Mvvm.csproj" />
+    <ProjectReference Include="..\..\CrossSync.Xamarin\CrossSync.Xamarin.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,10 +5,10 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
-using CoreSync.Entity.Abstractions;
-using CoreSync.Entity.Abstractions.EF.UnitOfWork;
-using CoreSync.Xamarin.DependencyInjection;
-using CoreSync.Xamarin.Services;
+using CrossSync.Entity.Abstractions;
+using CrossSync.Entity.Abstractions.EF.UnitOfWork;
+using CrossSync.Xamarin.DependencyInjection;
+using CrossSync.Xamarin.Services;
 using Sample.TodoList.Entities.Shared;
 
 namespace Sample.TodoList.Xamarin.Services
@@ -17,7 +17,7 @@ namespace Sample.TodoList.Xamarin.Services
   {
     private readonly IUnitOfWork<TodoListContext> unitOfWork;
 
-    public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, Lazy<IErrorService> errorService) : base(unitOfWork, errorService)
+    public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, IConnectivityService connectivityService, Lazy<IErrorService> errorService, SyncConfiguration config) : base(unitOfWork, connectivityService, errorService, config)
     {
       this.unitOfWork = unitOfWork;
     }

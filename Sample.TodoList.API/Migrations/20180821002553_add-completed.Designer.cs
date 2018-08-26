@@ -11,7 +11,7 @@ namespace Sample.TodoList.API.Migrations
 {
     [DbContext(typeof(TodoListContext))]
     [Migration("20180821002553_add-completed")]
-    partial class addcompleted
+    partial class Addcompleted
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Sample.TodoList.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("CoreSync.Entity.Abstractions.Entities.DeletedEntity", b =>
+            modelBuilder.Entity("CrossSync.Entity.Abstractions.Entities.DeletedEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();

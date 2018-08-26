@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CrossSync.Infrastructure.Client</AssemblyName>
+    <RootNamespace>CrossSync.Infrastructure.Client</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Sébastien Cambon</Authors>
+    <Description>This provides a client side implementation of EntityFramework using versionned entities and tracking changes</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrossSync.Entity.Abstractions.EF\CrossSync.Entity.Abstractions.EF.csproj" />
+    <ProjectReference Include="..\CrossSync.Entity.Client\CrossSync.Entity.Client.csproj" />
+  </ItemGroup>
+
+</Project>

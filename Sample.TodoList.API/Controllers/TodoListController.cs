@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CoreSync.AspNetCore.Api;
-using CoreSync.Entity.Abstractions.Services;
-using CoreSync.Entity.Abstractions.UnitOfWork;
+using CrossSync.AspNetCore.Api;
+using CrossSync.Entity.Abstractions.Services;
+using CrossSync.Entity.Abstractions.UnitOfWork;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Sample.TodoList.Entities.Shared;

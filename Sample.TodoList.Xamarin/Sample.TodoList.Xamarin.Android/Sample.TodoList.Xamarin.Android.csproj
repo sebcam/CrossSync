@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -97,33 +96,33 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CoreSync.Entity.Abstractions.EF\CoreSync.Entity.Abstractions.EF.csproj">
+    <ProjectReference Include="..\..\CrossSync.Entity.Abstractions.EF\CrossSync.Entity.Abstractions.EF.csproj">
       <Project>{3c5490d2-dcd7-4d1f-91a3-b341cbf24f84}</Project>
-      <Name>CoreSync.Entity.Abstractions.EF</Name>
+      <Name>CrossSync.Entity.Abstractions.EF</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Entity.Abstractions\CoreSync.Entity.Abstractions.csproj">
+    <ProjectReference Include="..\..\CrossSync.Entity.Abstractions\CrossSync.Entity.Abstractions.csproj">
       <Project>{3c343ad2-7387-4e72-8234-f90a761bc60e}</Project>
-      <Name>CoreSync.Entity.Abstractions</Name>
+      <Name>CrossSync.Entity.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Entity.Client\CoreSync.Entity.Client.csproj">
+    <ProjectReference Include="..\..\CrossSync.Entity.Client\CrossSync.Entity.Client.csproj">
       <Project>{11a32e65-b988-4354-b7ce-7f8212daaf56}</Project>
-      <Name>CoreSync.Entity.Client</Name>
+      <Name>CrossSync.Entity.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Infrastructure.Client\CoreSync.Infrastructure.Client.csproj">
+    <ProjectReference Include="..\..\CrossSync.Infrastructure.Client\CrossSync.Infrastructure.Client.csproj">
       <Project>{ea9c9ac4-453e-4ca4-9ad1-7a32be9091e9}</Project>
-      <Name>CoreSync.Infrastructure.Client</Name>
+      <Name>CrossSync.Infrastructure.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Xamarin.DependencyInjection\CoreSync.Xamarin.DependencyInjection.csproj">
+    <ProjectReference Include="..\..\CrossSync.Xamarin.DependencyInjection\CrossSync.Xamarin.DependencyInjection.csproj">
       <Project>{1f2aa82f-f46b-4c96-8abc-0b81c7837035}</Project>
-      <Name>CoreSync.Xamarin.DependencyInjection</Name>
+      <Name>CrossSync.Xamarin.DependencyInjection</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Xamarin.Mvvm\CoreSync.Xamarin.Mvvm.csproj">
+    <ProjectReference Include="..\..\CrossSync.Xamarin.Mvvm\CrossSync.Xamarin.Mvvm.csproj">
       <Project>{0d92dfe2-ab0f-42ca-b251-420aff75f8a6}</Project>
-      <Name>CoreSync.Xamarin.Mvvm</Name>
+      <Name>CrossSync.Xamarin.Mvvm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CoreSync.Xamarin\CoreSync.Xamarin.csproj">
+    <ProjectReference Include="..\..\CrossSync.Xamarin\CrossSync.Xamarin.csproj">
       <Project>{66e15842-958b-4731-9fa8-3095af101ff4}</Project>
-      <Name>CoreSync.Xamarin</Name>
+      <Name>CrossSync.Xamarin</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sample.TodoList.Xamarin\Sample.TodoList.Xamarin.csproj">
       <Project>{E048DA70-64ED-4A5A-BD1B-9D85BFCEE1F5}</Project>

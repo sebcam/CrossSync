@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CrossSync.Entity.Abstractions</AssemblyName>
+    <RootNamespace>CrossSync.Entity.Abstractions</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Sébastien Cambon</Authors>
+    <Description>This provides all abstraction classes and interfaces for data access use
+Data access service interface and an Entity base class
+Unit of work interface
+...</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>CrossSync.pfx</AssemblyOriginatorKeyFile>
+    <PackageIconUrl></PackageIconUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Exceptions\**" />
+    <EmbeddedResource Remove="Exceptions\**" />
+    <None Remove="Exceptions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+</Project>

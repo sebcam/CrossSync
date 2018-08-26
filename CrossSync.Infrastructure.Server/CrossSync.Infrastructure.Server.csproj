@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>CrossSync.Infrastructure.Server</AssemblyName>
+    <RootNamespace>CrossSync.Infrastructure.Server</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Sébastien Cambon</Authors>
+    <Description>This provides a server side implementation of EntityFramework using versionned entities and tracking changes</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+    <Version>1.0</Version>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageOutputPath>..\nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrossSync.Entity.Abstractions.EF\CrossSync.Entity.Abstractions.EF.csproj" />
+  </ItemGroup>
+
+</Project>

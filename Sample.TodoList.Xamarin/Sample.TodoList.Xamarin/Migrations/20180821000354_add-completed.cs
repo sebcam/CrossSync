@@ -2,7 +2,7 @@
 
 namespace Sample.TodoList.Xamarin.Migrations
 {
-    public partial class addcompleted : Migration
+    public partial class Addcompleted : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

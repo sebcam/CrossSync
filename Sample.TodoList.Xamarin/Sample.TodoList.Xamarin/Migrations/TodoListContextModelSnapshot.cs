@@ -16,7 +16,7 @@ namespace Sample.TodoList.Xamarin.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.1.1-rtm-30846");
 
-            modelBuilder.Entity("CoreSync.Infrastructure.Client.Operation", b =>
+            modelBuilder.Entity("CrossSync.Infrastructure.Client.Operation", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
