@@ -111,20 +111,20 @@ The last step is to register services to the IoC container :
 
 ##### Business Data Services implementation 
 
-  public class TodoListService : SyncService<Entities.Shared.TodoList>
-  {
-    private readonly IUnitOfWork<TodoListContext> unitOfWork;
+	public class TodoListService : SyncService<Entities.Shared.TodoList>
+  	{
+    		private readonly IUnitOfWork<TodoListContext> unitOfWork;
 
-    public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, IConnectivityService connectivityService, Lazy<IErrorService> errorService, SyncConfiguration config) : base(unitOfWork, connectivityService, errorService, config)
-    {
-      this.unitOfWork = unitOfWork;
-    }
+    		public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, IConnectivityService connectivityService, Lazy<IErrorService> errorService, SyncConfiguration config) : base(unitOfWork, connectivityService, errorService, config)
+    		{
+      			this.unitOfWork = unitOfWork;
+    		}
 
-    public override string ApiUri => "api/todolist";
+    		public override string ApiUri => "api/todolist";
 
-    // Order in which sync is done between services depending on data relations
-    public override int Order => 100;
-  }
+    		// Order in which sync is done between services depending on data relations
+    		public override int Order => 100;
+  	}
 
 ##### Start a synchronization
 
