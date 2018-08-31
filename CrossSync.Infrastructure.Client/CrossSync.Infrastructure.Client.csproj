@@ -7,12 +7,13 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Sébastien Cambon</Authors>
     <Description>This provides a client side implementation of EntityFramework using versionned entities and tracking changes</Description>
+    <PackageTags>CrossSync Entity EntityFramework EntityFrameworkCore AspNetCore API Sync Synchronization Mobile Xamarin Offline Database Services UnitOfWork Repository</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
-    <Version>1.0</Version>
+    <Version>0.1.0</Version>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageOutputPath>..\nuget</PackageOutputPath>
-    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/sebcam/CrossSync</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>

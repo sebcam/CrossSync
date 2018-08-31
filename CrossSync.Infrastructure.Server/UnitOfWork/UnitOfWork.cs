@@ -49,9 +49,7 @@ namespace CrossSync.Infrastructure.Server.UnitOfWork
     /// <returns></returns>
     public async Task CommitAsync()
     {
-      var ctx = context;
-
-      
+      var ctx = context;      
 
       var events = ctx.ChangeTracker.Entries().Select(f => f.Entity).OfType<INotifiableEntity>().SelectMany(f => f.DomainEvents);
       if (events.Any())

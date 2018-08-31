@@ -52,7 +52,7 @@ namespace CrossSync.Entity.Server.Repositories
     public virtual Task DeleteAsync(T entity)
     {
       Set.Remove(entity);
-      return Task.FromResult(0);
+      return Task.CompletedTask;
     }
 
     /// <summary>

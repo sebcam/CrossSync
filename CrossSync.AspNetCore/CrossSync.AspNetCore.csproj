@@ -9,10 +9,11 @@
     <Description>This provides server side implementations of data access services for API use.
 It also provides an abstraction to API controllers which encapsulate base services, conflict management and regirstration to the IoC.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0</Version>
+    <Version>0.1.0</Version>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageOutputPath>..\nuget</PackageOutputPath>
-    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/sebcam/CrossSync</PackageProjectUrl>
+    <PackageTags>CrossSync Entity EntityFramework EntityFrameworkCore AspNetCore API Sync Synchronization Mobile Xamarin Offline Database Services UnitOfWork Repository</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

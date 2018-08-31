@@ -2,15 +2,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 
-    <Version>1.0</Version>
+    <Version>0.1.0</Version>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageOutputPath>..\nuget</PackageOutputPath>
-    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/sebcam/CrossSync</PackageProjectUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Sébastien Cambon</Authors>
-    <Description>This provides an abstraction layer for EntityFramework use and tracking changes interfaces
-</Description>
-    <PackageTags>EntityFramework</PackageTags><PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <Description>This provides an abstraction layer for EntityFramework use and tracking changes interfaces</Description>
+    <PackageTags>CrossSync Entity EntityFramework EntityFrameworkCore AspNetCore API Sync Synchronization Mobile Xamarin Offline Database Services UnitOfWork Repository</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

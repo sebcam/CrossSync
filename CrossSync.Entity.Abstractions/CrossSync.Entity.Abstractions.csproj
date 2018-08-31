@@ -12,13 +12,14 @@ Unit of work interface
 ...</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
-    <Version>1.0</Version>
+    <Version>0.1.0</Version>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageOutputPath>..\nuget</PackageOutputPath>
-    <PackageProjectUrl>https://github.com/sebastiencambon/CrossSync</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/sebcam/CrossSync</PackageProjectUrl>
     <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>CrossSync.pfx</AssemblyOriginatorKeyFile>
     <PackageIconUrl></PackageIconUrl>
+    <PackageTags>CrossSync Entity EntityFramework EntityFrameworkCore AspNetCore API Sync Synchronization Mobile Xamarin Offline Database Services UnitOfWork Repository</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
