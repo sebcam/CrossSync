@@ -1,5 +1,5 @@
 # CrossSync
-[![.NetCore]https://img.shields.io/badge/.NetCore-2.1-blue.svg)]
+![.NetCore](https://img.shields.io/badge/.NetCore-2.1-blue.svg) ![.NetStandard](https://img.shields.io/badge/.NetStandard-2.0-blue.svg)
 
 CrossSync provides cross-plaform librairies for Xamarin and AspNetCore for easy data synchronization with offline data support based on Entity Framework Core.
 
