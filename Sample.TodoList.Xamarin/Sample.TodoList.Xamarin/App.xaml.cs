@@ -1,11 +1,13 @@
-using System;
 using System.Reflection;
 using Autofac;
 using CrossSync.Entity.Abstractions.EF.UnitOfWork;
 using CrossSync.Infrastructure.Client.UnitOfWork;
 using CrossSync.Xamarin.DependencyInjection;
 using CrossSync.Xamarin.Mvvm;
+using CrossSync.Xamarin.Mvvm.Services.Connectivity;
+using CrossSync.Xamarin.Mvvm.Services.Errors;
 using CrossSync.Xamarin.Services;
+using Microsoft.EntityFrameworkCore;
 using Sample.TodoList.Entities.Shared;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -45,7 +47,13 @@ namespace Sample.TodoList.Xamarin
        .As<IUnitOfWork<TodoListContext>>()
        .InstancePerLifetimeScope();
 
-      builder.RegisterDbContext<TodoListContext>(dbPath);
+      builder.RegisterType<ConnectivityService>().AsImplementedInterfaces();
+      builder.RegisterType<ErrorService>().AsImplementedInterfaces();
+
+      builder.RegisterType<TodoListContext>().AsImplementedInterfaces().AsSelf()
+        .WithParameter(new TypedParameter(typeof(string), dbPath))
+        .OnActivated(f => f.Instance.Database.Migrate())
+        .InstancePerLifetimeScope();
 
       var dataAccess = Assembly.GetExecutingAssembly();
       builder.RegisterAssemblyTypes(dataAccess)

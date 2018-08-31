@@ -1,9 +1,16 @@
 # CrossSync
 [![.NetCore]https://img.shields.io/badge/.NetCore-2.1-blue.svg)]
 
-
-
 CrossSync provides cross-plaform librairies for Xamarin and AspNetCore for easy data synchronization with offline data support based on Entity Framework Core.
+
+### Why ?
+
+Entity Framework Core now offers a way to share the business data code between the mobile and server applications.
+
+For now, Azure Mobile App is the most popular framework to do this. But it's working with .NetFramework and bring it to .NetCore seems to be not announced yet.
+So to work with Azure Mobile App, your data layer cannot be shared across these different platforms.
+
+This libs can be usefull for developpers which are looking for a way to synchronize offline datas on your mobile application using Entity Framework Core.
 
 High level features are :
 
@@ -12,11 +19,11 @@ High level features are :
  - Repository & Unit of work patterns
  - ...
 
-## Packages
-|Name|Description|Nuget
-|--|--|
-| `CrossSync.AspNetCore` | Provides aspnet core API configuration |
-| `CrossSync.Xamarin`| Provides... |
+## Top level Packages
+| Name | Description | Nuget |
+| ---- | ----------- | ----- |
+| `CrossSync.AspNetCore` | Provides aspnet core sync tools | ![Version](https://img.shields.io/badge/-0.1.0-blue.svg) |
+| `CrossSync.Xamarin`| Provides all implementations for mobile data offline and sync | ![Version](https://img.shields.io/badge/-0.1.0-blue.svg) |
 
 ## Get Started
 
@@ -38,17 +45,16 @@ All of your entities which need to be synchronized with mobile have to extend **
 
 ##### Controllers configuration
 
- 1. Controllers have to inherit from SyncController
-
+Controllers have to inherit from **SyncController** which is a crud controller.
 
 When you are done, juste add sync registration into your startup.cs :
 
-    public IServiceProvider ConfigureServices(IServiceCollection services)
+    public void ConfigureServices(IServiceCollection services)
     {
 	  /* ... */
 	  
 	  // Sync services registration
-	  return services.AddSync();
+	  services.AddSync();
     }
     
 
@@ -109,32 +115,35 @@ The last step is to register services to the IoC container :
     builder.RegisterType<SynchronizationService>().AsSelf().InstancePerLifetimeScope();
 
 
-#### Use
+#### How to use
 
 ##### Business Data Services implementation 
 
-  public class TodoListService : SyncService<Entities.Shared.TodoList>
-  {
-    private readonly IUnitOfWork<TodoListContext> unitOfWork;
-
-    public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, IConnectivityService connectivityService, Lazy<IErrorService> errorService, SyncConfiguration config) : base(unitOfWork, connectivityService, errorService, config)
+    public class TodoListService : SyncService<Entities.Shared.TodoList>
     {
-      this.unitOfWork = unitOfWork;
+        private readonly IUnitOfWork<TodoListContext> unitOfWork;
+
+        public TodoListService(IUnitOfWork<TodoListContext> unitOfWork, IConnectivityService connectivityService, Lazy<IErrorService> errorService, SyncConfiguration config) : base(unitOfWork, connectivityService, errorService, config)
+        {
+            this.unitOfWork = unitOfWork;
+        }
+
+        public override string ApiUri => "api/todolist";
+
+        // Order in which sync is done between services depending on data relations
+        public override int Order => 100;
     }
 
-    public override string ApiUri => "api/todolist";
-
-    // Order in which sync is done between services depending on data relations
-    public override int Order => 100;
-  }
-
 ##### Start a synchronization
+
+Synchronization, for now, have to be manually launched like this :   
 
     // Resolve the registrated sync service
     var synchronizationService = IoC.Resolve<SynchronizationService>();
     // Starts the synchronization
     await synchronizationService.SyncAsync();
 
+Soon, the synchronization will be done within an async background task.
 
 ##### Handle conflicts
 

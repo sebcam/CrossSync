@@ -1,25 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CrossSync.AspNetCore;
-using CrossSync.AspNetCore.Extensions;
+﻿using CrossSync.AspNetCore.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Sample.TodoList.Entities.Shared;
-using CrossSync.Entity.Abstractions.EF.UnitOfWork;
-using CrossSync.Infrastructure.Server.UnitOfWork;
-using CrossSync.Entity.Abstractions.UnitOfWork;
-using CrossSync.Entity.Abstractions.Services;
-using CrossSync.Entity.Server.Repositories;
 using Newtonsoft.Json;
-using CrossSync.AspNetCore.Api;
+using Sample.TodoList.Entities.Shared;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Sample.TodoList.API
 {
@@ -35,14 +22,19 @@ namespace Sample.TodoList.API
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc().AddApplicationPart(typeof(TombstoneController).Assembly).AddControllersAsServices().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
         .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
+      services.AddSwaggerGen(c =>
+      {
+        c.SwaggerDoc("v1", new Info { Title = "Sample todolist API", Version = "v1" });
+      });
+
 
       services.Configure<ConnectionStringOptions>(Configuration);
 
-      services.AddDbContext<TodoListContext>();
-
-      services.AddSync<TodoListContext>();
+      services.AddDbContext<TodoListContext>()
+        .AddSync<TodoListContext>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +46,12 @@ namespace Sample.TodoList.API
       {
         app.UseDeveloperExceptionPage();
       }
-      
+      app.UseSwagger();
+      app.UseSwaggerUI(c =>
+      {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample todolist API");
+      });
+
     }
   }
 }

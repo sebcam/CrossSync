@@ -48,7 +48,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.TodoList.Xamarin.And
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.TodoList.Xamarin", "Sample.TodoList.Xamarin\Sample.TodoList.Xamarin\Sample.TodoList.Xamarin.csproj", "{B240A4B9-0158-4C9E-94C8-FFDD905078AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.Migration.Tools", "EF.Migration.Tools\EF.Migration.Tools.csproj", "{80ED03DF-00E5-444D-8CD0-A5F84725E0D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF.Migration.Tools", "EF.Migration.Tools\EF.Migration.Tools.csproj", "{80ED03DF-00E5-444D-8CD0-A5F84725E0D8}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

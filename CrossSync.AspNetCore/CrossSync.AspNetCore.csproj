@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>CrossSync.API</AssemblyName>
-    <RootNamespace>CrossSync.API</RootNamespace>
+    <AssemblyName>CrossSync.AspNetCore</AssemblyName>
+    <RootNamespace>CrossSync.AspNetCore</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>Sébastien Cambon</Authors>
     <Description>This provides server side implementations of data access services for API use.

@@ -1,12 +1,8 @@
-﻿using System;
-
+﻿
+using Acr.UserDialogs;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Acr.UserDialogs;
 
 namespace Sample.TodoList.Xamarin.Droid
 {
@@ -19,7 +15,6 @@ namespace Sample.TodoList.Xamarin.Droid
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(bundle);
-
 
       App.Init(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
 

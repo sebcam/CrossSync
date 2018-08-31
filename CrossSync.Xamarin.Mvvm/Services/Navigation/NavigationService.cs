@@ -109,8 +109,8 @@ namespace CrossSync.Xamarin.Mvvm.Services.Navigation
                 Debug.WriteLine("ViewModel is busy while disposing... Waiting for busy to be false.");
               };
             }
-            Debug.WriteLine("Scope disposed !");
             pageScope.Dispose();
+            Debug.WriteLine("Scope disposed !");
             pageScopes.Remove(page);
           }
         };
@@ -167,37 +167,7 @@ namespace CrossSync.Xamarin.Mvvm.Services.Navigation
 
       return Task.FromResult(page);
     }
-
-    //public async Task<Page> ResolveAndInitPage(Type viewModelType)
-    //{
-    //  var viewModel = IoC.Resolve<IViewModel>(viewModelType);
-    //  if (viewModel == null)
-    //  {
-    //    await PopToRootAsync();
-    //  }
-    //  try
-    //  {
-    //    viewModel.IsInitializing = true;
-
-    //    await viewModel.Initialize();
-    //  }
-    //  finally
-    //  {
-    //    viewModel.IsInitializing = false;
-    //  }
-
-    //  var page = await ResolvePage(scope, viewModelType);
-    //  if (page == null)
-    //  {
-    //    return null;
-    //  }
-
-    //  page.BindingContext = viewModel;
-    //  page.SetBinding(Page.TitleProperty, "Title");
-
-    //  return page;
-    //}
-
+    
     public async Task NavigateModalAsync<T>() where T : class, IViewModel
     {
       await InternalNavigateAsync<T>(async (p) =>
