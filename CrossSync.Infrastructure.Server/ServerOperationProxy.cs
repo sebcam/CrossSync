@@ -5,6 +5,7 @@ using CrossSync.Entity.Abstractions.Entities;
 using CrossSync.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Linq;
 
 namespace CrossSync.Infrastructure.Server
 {
@@ -19,7 +20,7 @@ namespace CrossSync.Infrastructure.Server
 
     public async Task TrackEntities(IEnumerable<EntityEntry> entries)
     {
-      foreach (var entry in entries)
+      foreach (var entry in entries.ToList())
       {
         if (entry.Entity is IVersionableEntity versionableEntity)
         {
